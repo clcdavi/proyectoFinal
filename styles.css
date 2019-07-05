@@ -1,0 +1,74 @@
+*{ /*selector universal*/
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+body{
+	position: relative;
+}
+header{
+	position: relative;
+	width: 100%;
+	height: 70px;
+}
+
+.row{
+	height: 100%;
+}
+
+#logoPequeño{
+	position: absolute;
+	width: 130px;
+	left: 0;
+}
+
+#logoGrande{
+	position: absolute;
+	margin: auto;
+	width: 250px;
+	left: 80px;
+}
+
+#bIngresar{
+	position: absolute;
+	top: 15px;
+	right: 100px;
+}
+
+#bRegis{
+	position: absolute;
+	top:15px;
+	right: 18px;
+} 
+
+section{
+	position: relative;
+	background: #F2F2F2;
+	width: 100%;
+	height: 625px;
+}
+
+#navDropdown1{
+	text-align: center;
+
+}
+
+.dropdown{
+	margin: 5px 5px;
+}
+
+.cajaSesion{
+	position: relative;
+	width: 250px;
+	height: 400px;
+	right: 40px;
+}
+
+footer{
+	position: relative;
+	background: #D8D8D8;
+	width: 100%;
+	height: 300px;
+}
+
