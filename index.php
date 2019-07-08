@@ -67,8 +67,9 @@
 		</div>
 		<div class="row  bg-primary h-100 justify-content-between">
 			
-			<div class="col-md-6 bg-secondary h-100"></div>
-			<div class="col-md-6 bg-warning h-100"></div>
+			<div class="col-md-2 bg-secondary h-100"></div>
+			<div class="col-md-8 bg-primary h-100"></div>
+			<div class="col-md-2 bg-warning h-100"></div>
 
 		</div>
 

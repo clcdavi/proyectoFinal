@@ -9,7 +9,7 @@
 	<title>Cool San Fernando</title>
 
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/styles.css">
 
 	<!-- favIcon para el titulo -->
 	<link rel="icon" href="images/logoCSF_2.ico">
