@@ -1,7 +1,46 @@
 <section>
 		
+			<form class="col-md-7 mx-auto">
+					  <div class="form-row justify-content-center">
+
+						<div class="cols-xs-12 col-md-3 my-2">
+					      <select id="categoria" name="categoria" class="custom-select">
+							
+
+					      </select>
+						</div>
+
+						<div class="cols-xs-12 col-md-7 my-2">
+					      <input id="buscar" name="buscar" placeholder="Buscar" type="text" class="form-control">
+						</div>
+
+						<div class="my-2">
+					      <button onclick="enviarBusqueda();" name="submit" type="button" class="btn btn-primary">Buscar</button>
+						</div>
+						
+						<?php 
+							if ( isset($_SESSION["usuario"]) ){ ?>
+								<div class="mt-4 mb-2">					    
+		   					    	<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+
+									<a href="#" class="mx-4" name="favoritos">Historial</a>
+
+									<a href="index.php?m=pubs&a=new" class="mx-4" name="publicar">Publicar</a>
+
+									<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis publicaciones</a>
+								</div>
+						<?php } ?>
+
+					  </div>
+
+					</form>
+
+				</div>
+			</div>
+
+		<!----------------
 		<div class="container-fluid border" style="height: 50px;">
-			<!--en esta fila, el "justify-content-between" hace que mis 5 columnas de "2 espacios c/u" se organicen y centren de entre los 12 espacios de bootstrap-->
+			<!-en esta fila, el "justify-content-between" hace que mis 5 columnas de "2 espacios c/u" se organicen y centren de entre los 12 espacios de bootstrap->
 			<div class="row justify-content-between" id="navDropdown1">
 				<div class="col-2">
 					<div class="dropdown mb-3">
@@ -64,12 +103,25 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="row  bg-primary h-100 justify-content-between">
 			
-			<div class="col-md-2 bg-secondary h-100"></div>
-			<div class="col-md-8 bg-primary h-100"></div>
-			<div class="col-md-2 bg-warning h-100"></div>
+			<div class="col-md-2 h-100 border">
+				
+				<h3>
+					seccion de explicacion del proyecto para el usuario
+				</h3>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iure maxime quis, nihil fuga ducimus blanditiis quos impedit consequuntur laudantium qui. Voluptates aliquid cum, repellat, facilis libero est cumque officia!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iure maxime quis, nihil fuga ducimus blanditiis quos impedit consequuntur laudantium qui. Voluptates aliquid cum, repellat, facilis libero est cumque officia!
+				</p>
+
+			</div>
+			<div class="col-md-8 h-100 border"></div>
+			<div class="col-md-2 h-100 border"></div>
 
 		</div>
 

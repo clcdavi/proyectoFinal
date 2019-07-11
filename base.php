@@ -34,11 +34,10 @@
 
 			</div>
 
-			<!--columna-->
-			<div class="col-4 border">
-
-				<!--aca estuvo el logo grande-->	
-				<nav class="navbar navbar-light mt-2">
+			
+			<div class="col-4">
+				
+				<!--<nav class="navbar navbar-light mt-2">
 				  <form class="cols-md-6 mx-auto" >
 
 				  	<div class="form-row justify-content-center">
@@ -51,7 +50,7 @@
 							<button name="submit" type="submit" class="btn btn-secondary">Buscar</button>
 						</div>
 
-				  	<!-- <div class="input-group xl-5">
+				  	<div class="input-group xl-5">
 
 						<input type="text" class="form-control" placeholder="Buscar">
 
@@ -61,13 +60,13 @@
 
 						</div>
 
-					</div> -->
+					</div> 
 					</div>
 				  </form>
-				</nav>			
+				</nav>-->		
 			</div>
 
-			<!--columna-->
+			
 			<div class="col-4 align-content-center">
 
 				<div>
