@@ -8,11 +8,15 @@
 
 	<title>Cool San Fernando</title>
 
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<meta name="description" content="Sitio lider  de San fernando en busqueda de salones">
+    <meta name="author" content="Curso PHP SF 2019">
+
+    <link href="<?= PATH_VENDOR ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="<?= PATH_CSS ?>/styles.css" rel="stylesheet">
 
 	<!-- favIcon para el titulo -->
-	<link rel="icon" href="images/logoCSF_2.ico">
+	<link href="<?=PATH_IMAGENES?>/logoCSF_2.ico" rel="icon">
 
 </head>
 <body>
@@ -89,8 +93,8 @@
 	
 	<script>
 	</script>
-	<script src="vendor/jquery/jquery-3.4.1.min.js"></script>
-	<script src="vendor/popper/popper.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?= PATH_VENDOR ?>/jquery/jquery-3.4.1.min.js"></script>
+	<script src="<?= PATH_VENDOR ?>/popper/popper.min.js"></script>
+	<script src="<?= PATH_VENDOR ?>/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
