@@ -1,0 +1,20 @@
+tabla interseccion/ relacion
+cardinalidad--
+romper relaciones n/n
+*marcar "indice para foraneas", la foranea conecta con la primaria de otra tabla.
+*primarias ya son "indice"
+
+
+*tabla relacion entre salones y usuarios(no AI)
+           ambas primary
+
+           ej de tabla:
+
+	autoresLibros.
+	"id us, id libros"
+
+	comentarios.
+	 "id us, id lib, descripcion-indice, fecha,id comentarios-primary "
+
+	genero.
+	"id genero-primary, nombre genero"

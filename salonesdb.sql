@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2019 a las 04:16:31
+-- Tiempo de generación: 21-07-2019 a las 00:45:13
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -21,6 +21,17 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `salonesdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_salones` int(11) NOT NULL,
+  `id_usuarios` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -92,6 +103,17 @@ INSERT INTO `sal_categoria` (`sal_cat_id`, `sal_cat_descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `sal_sexo`
+--
+
+CREATE TABLE `sal_sexo` (
+  `id_sexo` int(11) NOT NULL,
+  `descripcion` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `sal_usuarios`
 --
 
@@ -100,26 +122,37 @@ CREATE TABLE `sal_usuarios` (
   `user_nombre` varchar(20) NOT NULL,
   `user_nombre_real` varchar(30) NOT NULL,
   `user_pass` varchar(20) NOT NULL,
-  `user_email` varchar(30) NOT NULL
+  `user_email` varchar(30) NOT NULL,
+  `id_sexo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `sal_usuarios`
 --
 
-INSERT INTO `sal_usuarios` (`user_id`, `user_nombre`, `user_nombre_real`, `user_pass`, `user_email`) VALUES
-(1, 'David', 'David Correa', '12345678', 'clcdavi@gmail.com'),
-(2, 'Pablo', 'Pablo Tilli', '12345678', 'tillipablo@gmail.com');
+INSERT INTO `sal_usuarios` (`user_id`, `user_nombre`, `user_nombre_real`, `user_pass`, `user_email`, `id_sexo`) VALUES
+(1, 'david', 'David Correa', 'david', 'clcdavi@gmail.com', 1),
+(2, 'pablo', 'Pablo Tilli', 'pablo', 'tillipablo@gmail.com', 1),
+(3, 'root', 'Administrador', 'root', 'root@root.com', 0);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_salones`,`id_usuarios`),
+  ADD KEY `id_usuarios` (`id_usuarios`);
+
+--
 -- Indices de la tabla `salones`
 --
 ALTER TABLE `salones`
-  ADD PRIMARY KEY (`sal_id`);
+  ADD PRIMARY KEY (`sal_id`),
+  ADD KEY `sal_cat` (`sal_cat`),
+  ADD KEY `sal_id_usuario` (`sal_id_usuario`);
 
 --
 -- Indices de la tabla `sal_categoria`
@@ -128,10 +161,17 @@ ALTER TABLE `sal_categoria`
   ADD PRIMARY KEY (`sal_cat_id`);
 
 --
+-- Indices de la tabla `sal_sexo`
+--
+ALTER TABLE `sal_sexo`
+  ADD PRIMARY KEY (`id_sexo`);
+
+--
 -- Indices de la tabla `sal_usuarios`
 --
 ALTER TABLE `sal_usuarios`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `id_sexo` (`id_sexo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -150,10 +190,39 @@ ALTER TABLE `sal_categoria`
   MODIFY `sal_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `sal_sexo`
+--
+ALTER TABLE `sal_sexo`
+  MODIFY `id_sexo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `sal_usuarios`
 --
 ALTER TABLE `sal_usuarios`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_salones`) REFERENCES `salones` (`sal_id_usuario`),
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_usuarios`) REFERENCES `sal_usuarios` (`user_id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `salones`
+--
+ALTER TABLE `salones`
+  ADD CONSTRAINT `salones_ibfk_1` FOREIGN KEY (`sal_cat`) REFERENCES `sal_categoria` (`sal_cat_id`);
+
+--
+-- Filtros para la tabla `sal_sexo`
+--
+ALTER TABLE `sal_sexo`
+  ADD CONSTRAINT `sal_sexo_ibfk_1` FOREIGN KEY (`id_sexo`) REFERENCES `sal_usuarios` (`id_sexo`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

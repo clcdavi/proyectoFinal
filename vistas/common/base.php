@@ -8,7 +8,7 @@
 
 	<title>Cool San Fernando</title>
 
-	<meta name="description" content="Sitio lider  de San fernando en busqueda de salones">
+	<meta name="description" content="Sitio lider de San fernando en busqueda de salones">
     <meta name="author" content="Curso PHP SF 2019">
 
     <link href="<?= PATH_VENDOR ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,9 @@
 
 	<!-- favIcon para el titulo -->
 	<link href="<?=PATH_IMAGENES?>/logoCSF_2.ico" rel="icon">
+
+	<!-- no cambia la letra |-_-|  -->
+	<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 
 </head>
 <body>

@@ -6,7 +6,11 @@
 						<div class="cols-xs-12 col-md-3 my-2">
 					      <select id="categoria" name="categoria" class="custom-select">
 							
+							<?php
+								include_once( PATH_HELPERS . "/html_helper.php");
 
+								echo getOptionsComboCategorias(true);
+							?>
 					      </select>
 						</div>
 

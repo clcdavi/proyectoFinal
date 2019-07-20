@@ -1,0 +1,8 @@
+*hacer que aparescan las categorias en barra de busqueda
+*habilitar el boton de busqueda de salones
+*habilitar registro, login y logout
+*hacer que aparesca el resultado de la busqueda de salones,
+   por categoria o individualmente por boton buscar
+-----
+*en la dase de datos:
+   verificar si esta correcta 
