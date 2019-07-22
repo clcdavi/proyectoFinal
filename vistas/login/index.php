@@ -8,9 +8,9 @@
         $conexion = getConexion();
 
         $consulta = "SELECT * " . 
-                    "FROM usuarios " .
-                    "WHERE usr_nombre_usuario = '" . $_POST["user_name"] . "'" .
-                    " AND usr_password = '" . $_POST["password"] . "'";
+                    "FROM sal_usuarios " .
+                    "WHERE user_nombre = '" . $_POST["user_name"] . "'" .
+                    " AND user_pass = '" . $_POST["password"] . "'";
 
         $resultado = $conexion->query( $consulta );
 
@@ -21,8 +21,8 @@
 
             $usuario = $resultado->fetch_assoc();
 
-            $_SESSION["usuario"] = $usuario["usr_nombre_real"];
-            $_SESSION["id_usuario"] = $usuario["usr_id"];
+            $_SESSION["usuario"] = $usuario["user_nombre_real"];
+            $_SESSION["id_usuario"] = $usuario["user_id"];
             
 
         }

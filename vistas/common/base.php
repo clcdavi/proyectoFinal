@@ -18,8 +18,8 @@
 	<!-- favIcon para el titulo -->
 	<link href="<?=PATH_IMAGENES?>/logoCSF_2.ico" rel="icon">
 
-	<!-- no cambia la letra |-_-|  -->
-	<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+	<!-- fuente -->
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -76,10 +76,28 @@
 			
 			<div class="col-4 align-content-center">
 
-				<div>
-					<a href=""><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Registrate</button></a>
-					<a href=""><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Ingresá</button></a>
-				</div>
+				<?php 
+				if ( !isset($_SESSION["usuario"]) ){ ?>
+					<div>
+						<a href=""><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Registrate</button></a>
+
+						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Ingresá</button></a>
+					</div>
+				<?php 
+				}
+				else{
+				?>
+					<div class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"><?= $_SESSION["usuario"] ?></a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="#">Cuenta</a>
+							<a class="dropdown-item" href="index.php?m=logout">Salir</a>
+						</div>
+					</div>
+				<?php 
+				}
+				?> 
+
 			</div>
 		</div>
 	</header>
@@ -90,9 +108,12 @@
 
 	?>
 
-	<footer>
-		FOOT
-	</footer>
+<!-- footer -->
+<!-- 	<link rel="stylesheet" href="<?=PATH_VIEWS?>/common/footer.php"> -->
+
+	<?php 
+		include "footer.php";
+	 ?>
 	
 	<script>
 	</script>
