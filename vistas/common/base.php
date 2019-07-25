@@ -35,7 +35,6 @@
 				</div>
 
 				<div>
-					<!--<a href=""><img id="logoGrande" src="images/logoCoolSanFernando2.png" alt="logoGrande"></a>-->
 					<h4 id="logoGrande" class="text-center mt-1">Cool<br>San Fernando</h4>
 				</div>
 
@@ -79,7 +78,7 @@
 				<?php 
 				if ( !isset($_SESSION["usuario"]) ){ ?>
 					<div>
-						<a href=""><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Registrate</button></a>
+						<a data-toggle="modal" data-target="#exampleModalR" class="nav-link" href=""><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Registrate</button></a>
 
 						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Ingresá</button></a>
 					</div>
@@ -103,16 +102,122 @@
 	</header>
 
 	<?php
-
-		include "index.php";
-
+		include( PATH_VIEWS . '/common/partials/index.php' );
 	?>
+
+	<!-- Modal de ingreso-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Ingresá a Cool San Fernando</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<form action="index.php" role="form" method="POST">
+
+						<input type="hidden" name="m" value="login">
+
+						<div class="form-group">
+							 
+							<label for="user_name">Nombre de usuario</label>
+
+							<input type="text" class="form-control" name="user_name" id="user_name" />
+						</div>
+
+						<div class="form-group">
+							 
+							<label for="password">Contraseña</label>
+
+							<input type="password" class="form-control" name="password" id="password" />
+						</div>
+
+						<button type="submit" class="btn btn-primary">
+							Ingresar
+						</button>
+
+					</form>
+				</div>
+			</div>
+
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+
+</div>
+	<!-- Modal de Registro-->
+	<div class="modal fade" id="exampleModalR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Registro en Cool San Fernando</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<form action="index.php" role="form" method="POST">
+
+						<input type="hidden" name="m" value="login">
+
+						<div class="form-group">
+							 
+							<label for="user_name">Nombre de usuario</label>
+
+							<input type="text" class="form-control" name="user_name" id="user_name" />
+						</div>
+
+						<div class="form-group">
+							 
+							<label for="user_name">Email</label>
+
+							<input type="email" class="form-control" name="user_email" id="user_email" />
+						</div>
+
+						<div class="form-group">
+							 
+							<label for="password">Contraseña</label>
+
+							<input type="password" class="form-control" name="password" id="password" />
+						</div>
+
+						<div class="form-group">
+							 
+							<label for="password">Confirmar contraseña</label>
+
+							<input type="password" class="form-control" name="password" id="password" />
+						</div>
+
+						<button type="submit" class="btn btn-primary">
+							Enviar
+						</button>
+
+					</form>
+				</div>
+			</div>
+
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+</div> 
 
 <!-- footer -->
 <!-- 	<link rel="stylesheet" href="<?=PATH_VIEWS?>/common/footer.php"> -->
 
 	<?php 
-		include "footer.php";
+		include( PATH_VIEWS . '/common/partials/footer.php' );
 	 ?>
 	
 	<script>

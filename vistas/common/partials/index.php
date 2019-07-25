@@ -111,7 +111,7 @@
 		<div class="row  bg-secondary h-100 justify-content-between">
 			
 			<div class="col-md-2 h-100">
-				
+				<br>
 				<h3>
 					Estas en Cool San Fernando
 				</h3>
@@ -124,8 +124,15 @@
 				</p>
 
 			</div>
-			<div class="col-md-8 h-100 border"></div>
-			<div class="col-md-2 h-100"></div>
+			<div class="col-md-8 h-50 border">
+				<div class="row">
+			      <div class="col" style="background-color:yellow;">25%</div>
+			      <div class="col" style="background-color:orange;">25%</div>
+			      <div class="col" style="background-color:yellow;">25%</div>
+			      <div class="col" style="background-color:orange;">25%</div>
+			    </div>
+			</div>
+			<div class="col-md-2 h-75"></div>
 
 		</div>
 
