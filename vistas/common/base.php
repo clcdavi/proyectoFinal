@@ -23,7 +23,7 @@
 
 </head>
 <body>
-	<header class="container-fluid"><!--contenido fluido, ocupa el ancho de la pantalla-->
+	<header class="container-fluid bg-warning"><!--contenido fluido, ocupa el ancho de la pantalla-->
 		<!--fila-->
 		<div class="row">
 
@@ -43,33 +43,8 @@
 			
 			<div class="col-4">
 				
-				<!--<nav class="navbar navbar-light mt-2">
-				  <form class="cols-md-6 mx-auto" >
-
-				  	<div class="form-row justify-content-center">
-
-					  	<div class="cols-md-6 mx-4 ml-0 pl-0">
-						      <input id="buscar" name="buscar" placeholder="Buscar" type="text" class="form-control">
-						</div>
-
-						<div>
-							<button name="submit" type="submit" class="btn btn-secondary">Buscar</button>
-						</div>
-
-				  	<div class="input-group xl-5">
-
-						<input type="text" class="form-control" placeholder="Buscar">
-
-						<div class="input-group-append">
-
-							<button class="btn btn-outline-secondary" type="button" id="button-addo2">Buscar</button>
-
-						</div>
-
-					</div> 
-					</div>
-				  </form>
-				</nav>-->		
+				<!-- un lugarcito-->
+						
 			</div>
 
 			
@@ -214,8 +189,6 @@
 </div> 
 
 <!-- footer -->
-<!-- 	<link rel="stylesheet" href="<?=PATH_VIEWS?>/common/footer.php"> -->
-
 	<?php 
 		include( PATH_VIEWS . '/common/partials/footer.php' );
 	 ?>

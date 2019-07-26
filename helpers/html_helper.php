@@ -132,14 +132,14 @@ function getOptionsComboCategorias($incluir_cat_todas = false, $id_item_seleccio
 
     
     foreach ( $categorias as $categoria ){
-        $opcionesCombo .= '<option  value="'. $categoria["cat_id"] . '"';
+        $opcionesCombo .= '<option  value="'. $categoria["sal_cat_id"] . '"';
 
 
-        if ( $id_item_seleccionado != null && ($id_item_seleccionado == $categoria["cat_id"]) ){
+        if ( $id_item_seleccionado != null && ($id_item_seleccionado == $categoria["sal_cat_id"]) ){
             $opcionesCombo .= 'selected="selected" ';
         }
 
-        $opcionesCombo .= '>' . $categoria["cat_descripcion"] . '</option>';
+        $opcionesCombo .= '>' . $categoria["sal_cat_descripcion"] . '</option>';
     }
 
     return $opcionesCombo;    

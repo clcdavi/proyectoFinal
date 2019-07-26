@@ -39,78 +39,10 @@
 		</div>
 
 	</form>
-
-
-		<!----------------
-		<div class="container-fluid border" style="height: 50px;">
-			<!-en esta fila, el "justify-content-between" hace que mis 5 columnas de "2 espacios c/u" se organicen y centren de entre los 12 espacios de bootstrap->
-			<div class="row justify-content-between" id="navDropdown1">
-				<div class="col-2">
-					<div class="dropdown mb-3">
-						<button class="btn btn-info dropdown-toggle" type="button" id="dropdownBotonPelu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Peluquería
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-							<a href="#" class="dropdown-item ">pelu</a>
-							<a href="#" class="dropdown-item btn-warning">pelu</a>
-							<a href="#" class="dropdown-item btn-success">pelu</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="dropdown mb-3">
-						<button class="btn btn-info dropdown-toggle" type="button" id="dropdownBotonPelu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Barbería
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-							<a href="#" class="dropdown-item ">barb</a>
-							<a href="#" class="dropdown-item btn-warning">barb</a>
-							<a href="#" class="dropdown-item btn-success">barb</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="dropdown mb-3">
-						<button class="btn btn-info dropdown-toggle" type="button" id="dropdownBotonPelu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Manicuría
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-							<a href="#" class="dropdown-item ">mani</a>
-							<a href="#" class="dropdown-item btn-warning">mani</a>
-							<a href="#" class="dropdown-item btn-success">mani</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="dropdown mb-3">
-						<button class="btn btn-info dropdown-toggle" type="button" id="dropdownBotonPelu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Pedicuría
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-							<a href="#" class="dropdown-item ">pedi</a>
-							<a href="#" class="dropdown-item btn-warning">pedi</a>
-							<a href="#" class="dropdown-item btn-success">pedi</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="dropdown mb-3">
-						<button class="btn btn-info dropdown-toggle" type="button" id="dropdownBotonPelu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Estética
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuBoton">
-							<a href="#" class="dropdown-item ">estetica</a>
-							<a href="#" class="dropdown-item btn-warning">estetica</a>
-							<a href="#" class="dropdown-item btn-success">estetica</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
 		
-		<div class="row  bg-secondary h-100 justify-content-between">
+		<div class="row  h-100 ">
 			
-			<div class="col-md-2 h-100">
+			<div class="col-md-2 h-100 ">
 				<br>
 				<h3>
 					Estas en Cool San Fernando
@@ -124,16 +56,63 @@
 				</p>
 
 			</div>
-			<div class="col-md-8 h-50 border">
-				<div class="row">
-			      <div class="col" style="background-color:yellow;">25%</div>
-			      <div class="col" style="background-color:orange;">25%</div>
-			      <div class="col" style="background-color:yellow;">25%</div>
-			      <div class="col" style="background-color:orange;">25%</div>
-			    </div>
+
+			<div class="col-lg-8 p-2 h-100 salBox bg-warning ">
+
+				<div class="">
+					
+					<!--card de salon-->
+					<div class="card mb-3" style="max-width: 880px; height: 250px;">
+					  <div class="row no-gutters m-2">
+					    <div class="col-md-4 mt-1">
+					      <img src="<?=PATH_IMAGENES?>/laBarberia.png" class="card-img img-thumbnail "style="max-width: 220px;" alt="laBarberia">
+					    </div>
+					    <div class="col-md-8">
+					      <div class="card-body">
+					        <h5 class="card-title">Nombre del Salon</h5>
+					        <p class="card-text">Descripcion y datos del salon. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, perferendis, exercitationem accusamus non.</p>
+					        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<div class="card mb-3" style="max-width: 880px; height: 250px;">
+					  <div class="row no-gutters m-2">
+					    <div class="col-md-4 mt-1">
+					      <img src="<?=PATH_IMAGENES?>/adara.jpg" class="card-img img-thumbnail "style="max-width: 220px;" alt="laBarberia">
+					    </div>
+					    <div class="col-md-8">
+					      <div class="card-body">
+					        <h5 class="card-title">Nombre del Salon</h5>
+					        <p class="card-text">Descripcion y datos del salon. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, perferendis, exercitationem accusamus non.</p>
+					        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<div class="card mb-3" style="max-width: 880px; height: 250px;">
+					  <div class="row no-gutters m-2">
+					    <div class="col-md-4 mt-1">
+					      <img src="<?=PATH_IMAGENES?>/karinaDarc.jpg" class="card-img img-thumbnail "style="max-width: 220px;" alt="laBarberia">
+					    </div>
+					    <div class="col-md-8">
+					      <div class="card-body">
+					        <h5 class="card-title">Nombre del Salon</h5>
+					        <p class="card-text">Descripcion y datos del salon. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, perferendis, exercitationem accusamus non.</p>
+					        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+				</div>
+
 			</div>
+
 			<div class="col-md-2 h-75"></div>
 
-		</div>
+			</div>
 
 </section>
