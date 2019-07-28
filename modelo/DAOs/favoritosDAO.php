@@ -6,9 +6,9 @@
 
         $conexion = getConexion();
 
-        $consulta = "SELECT fav_usr_id_publicacion " . 
+        $consulta = "SELECT fav_sal_id_salones " . 
                     "FROM favoritos_usuarios " .
-                    "WHERE fav_usr_id_usuario=" . $idUsuario;
+                    "WHERE fav_sal_id_usuario=" . $idUsuario;
 
         $resultado = $conexion->query( $consulta );
 
@@ -16,7 +16,7 @@
         
         while($favorito = $resultado->fetch_assoc())
         {
-            $array_favoritos[] = $favorito["fav_usr_id_publicacion"];
+            $array_favoritos[] = $favorito["fav_sal_id_salones"];
         }
 
         return $array_favoritos;
@@ -27,7 +27,7 @@
         $conexion = getConexion();
 
         $consulta = "INSERT INTO favoritos_usuarios " . 
-                    "(fav_usr_id_publicacion, fav_usr_id_usuario) " .
+                    "(fav_sal_id_salones, fav_sal_id_usuario) " .
                     "VALUES (" . $id_publicacion . ", " . $idUsuario . ")";
 
 
@@ -40,7 +40,7 @@
         $conexion = getConexion();
 
         $consulta = "DELETE FROM favoritos_usuarios " . 
-                    "WHERE fav_usr_id_publicacion=" . $id_publicacion . " AND  fav_usr_id_usuario=" . $idUsuario;
+                    "WHERE fav_sal_id_salones=" . $id_publicacion . " AND  fav_sal_id_usuario=" . $idUsuario;
 
 
         $resultado = $conexion->query( $consulta );

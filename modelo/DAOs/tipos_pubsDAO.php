@@ -1,5 +1,5 @@
 <?php
-
+    // no tengo tipos de publicaciones
     include_once PATH_HELPERS . '/database_helper.php';
 
     function buscarTiposPublicaciones(){

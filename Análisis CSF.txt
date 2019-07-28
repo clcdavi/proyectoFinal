@@ -13,7 +13,9 @@ AND `pub_precio` <= 10000
 ORDER BY pub_precio DESC
 ...................................................................................
 modif en:
- combo categorias, section, footer,base, bBuscar,
+	header,msj alerta, en DB(nueva tabla sal_descripcion), 
+	publicacionesDAO,favoritosDAO,categoriasDAO,
+	helper.php, footer, section,
 
 *accedi a la db para obtener las categorias,
 cuando selecciono una, tengo que presionar buscar.

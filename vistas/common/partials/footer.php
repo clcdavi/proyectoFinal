@@ -1,8 +1,8 @@
 <footer>
 
-    <div class="row border-top">
+    <div class="row">
 
-        <div class="col-12 d-flex justify-content-between">
+        <div class="col-12 d-flex justify-content-between border">
     
             <div class="nav-link">
                 <a class="nav-item nav-link" href="#">Home</a>

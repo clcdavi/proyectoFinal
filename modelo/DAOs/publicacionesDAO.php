@@ -2,18 +2,18 @@
 
     include_once PATH_HELPERS . '/database_helper.php';
 
-	function buscarPublicaciones($busqueda, $id_categoria, $orden, $precio_desde, $precio_hasta){
+	function buscarPublicaciones($busqueda, $id_categoria, $orden){
 
         $conexion = getConexion();
 
-        $consulta = "SELECT pub_id, pub_titulo, SUBSTRING(pub_descripcion, 1, 100) AS pub_descripcion, pub_precio, pub_id_categoria, pub_id_usuario, pub_id_tipo_publicacion, pub_imagen " . 
-                  "FROM publicaciones ";
+        $consulta = "SELECT sal_id, sal_nombre, SUBSTRING(sal_descripcion, 1, 100) AS sal_descripcion, sal_categoria, sal_id_usuario, sal_imagen " . 
+                  "FROM salones ";
 
         if ( $busqueda != "" ){
 
-           $consulta .= " WHERE (pub_titulo LIKE '%" . $busqueda . "%' OR pub_descripcion LIKE '%" . $busqueda . "%')";
+           $consulta .= " WHERE (sal_nombre LIKE '%" . $busqueda . "%' OR sal_descripcion LIKE '%" . $busqueda . "%')";
         }
-
+        // no tengo precio en cool sanfernando
         if ( $precio_desde ){
 
             if ( $busqueda == "" ){
@@ -28,7 +28,7 @@
         if ( $precio_hasta ){
             $consulta .= " AND pub_precio <= " . $precio_hasta;            
         }
-
+        // ------------------------------------------------------
         if ( $id_categoria >= 0 )
         {
             
@@ -40,7 +40,7 @@
                 $consulta .= " WHERE ";
             }
 
-            $consulta .= " pub_id_categoria = " . $id_categoria;
+            $consulta .= " sal_categoria = " . $id_categoria;
 
         }
 
@@ -56,8 +56,8 @@
         $conexion = getConexion();
 
         $consulta = "SELECT * " . 
-                  "FROM publicaciones " . 
-                  "WHERE pub_id = " . $id_publicacion;
+                  "FROM salones " . 
+                  "WHERE sal_id = " . $id_publicacion;
 
         $resultado = $conexion->query( $consulta );
 
@@ -67,9 +67,9 @@
     function buscarPublicacionesUsuario( $id_usuario ){
         $conexion = getConexion();
 
-        $consulta = "SELECT pub_id, pub_titulo, SUBSTRING(pub_descripcion, 1, 100) AS pub_descripcion, pub_precio, pub_id_categoria, pub_id_usuario, pub_id_tipo_publicacion, pub_imagen " . 
-                  "FROM publicaciones " . 
-                  "WHERE pub_id_usuario = " . $id_usuario;
+        $consulta = "SELECT sal_id, sal_nombre, SUBSTRING(sal_descripcion, 1, 100) AS sal_descripcion, sal_categoria, sal_usuario, sal_imagen " . 
+                  "FROM salones " . 
+                  "WHERE sal_usuario = " . $id_usuario;
 
 
         $resultado = $conexion->query( $consulta );
@@ -81,9 +81,9 @@
 
         $conexion = getConexion();
 
-        $consulta = "SELECT pub_id, pub_titulo, SUBSTRING(pub_descripcion, 1, 100) AS pub_descripcion, pub_precio, pub_id_categoria, pub_id_usuario, pub_id_tipo_publicacion, pub_imagen " . 
-                  "FROM publicaciones " . 
-                  "WHERE pub_id IN ( SELECT  fav_usr_id_publicacion  FROM favoritos_usuarios WHERE fav_usr_id_usuario = " . $id_usuario . ")";
+        $consulta = "SELECT sal_id, sal_nombre, SUBSTRING(sal_descripcion, 1, 100) AS sal_descripcion, sal_categoria, sal_usuario, sal_imagen " . 
+                  "FROM salones " . 
+                  "WHERE sal_id IN ( SELECT  fav_sal_id_salones  FROM favoritos_usuarios WHERE fav_sal_id_usuario = " . $id_usuario . ")";
 
         $resultado = $conexion->query( $consulta );
 
@@ -95,8 +95,8 @@
 
         $conexion = getConexion();
 
-        $sql = "DELETE FROM publicaciones " .         
-               " WHERE pub_id = " . $id_publicacion;
+        $sql = "DELETE FROM salones " .         
+               " WHERE sal_id = " . $id_publicacion;
 
         $resultado = $conexion->query( $sql );
 
@@ -106,12 +106,11 @@
 
         $conexion = getConexion();
 
-        $sql = "INSERT INTO publicaciones " . 
-                    "(pub_titulo, pub_descripcion, pub_precio, pub_id_categoria, pub_id_usuario, pub_id_tipo_publicacion, pub_imagen)" 
+        $sql = "INSERT INTO salones " . 
+                    "(sal_nombre, sal_descripcion, sal_categoria, sal_usuario, sal_imagen)" 
                         . " VALUES ('" 
-                        . $publicacion["titulo"] . "', '"
+                        . $publicacion["nombre"] . "', '"
                         . $publicacion["descripcion"] . "', "
-                        . $publicacion["precio"] . ", "
                         . $publicacion["id_categoria"] . ", "
                         . $publicacion["id_usuario"] . ","
                         . $publicacion["id_tipo_publicacion"] . ", '"
@@ -127,19 +126,17 @@
 
         $conexion = getConexion();
 
-        $sql = "UPDATE publicaciones SET " . 
-                    "pub_titulo= \"" . $publicacion["titulo"] . "\"" .
-                    ", pub_descripcion=\"" . $publicacion["descripcion"] . "\"". 
-                    ", pub_precio=" . $publicacion["precio"] .
-                    ", pub_id_categoria=" . $publicacion["id_categoria"] .
-                    ", pub_id_usuario=" . $publicacion["id_usuario"] .
-                    ", pub_id_tipo_publicacion=" . $publicacion["id_tipo_publicacion"];
+        $sql = "UPDATE salones SET " . 
+                    "sal_nombre= \"" . $publicacion["nombre"] . "\"" .
+                    ", sal_descripcion=\"" . $publicacion["descripcion"] . "\"".
+                    ", sal_categoria=" . $publicacion["id_categoria"] .
+                    ", sal_usuario=" . $publicacion["id_usuario"] .
 
         if ( $publicacion["imagen"] ){
-            $sql .= ", pub_imagen=\"" . $publicacion["imagen"] . "\"";
+            $sql .= ", sal_imagen=\"" . $publicacion["imagen"] . "\"";
         }
         
-        $sql .= " WHERE pub_id = " . $publicacion["id"];
+        $sql .= " WHERE sal_id = " . $publicacion["id"];
 
 
 

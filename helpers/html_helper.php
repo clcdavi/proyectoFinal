@@ -1,6 +1,6 @@
 <?php
 
-function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $precio, $id_pub, $pub_usuario = false, $es_favorito = false){
+function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $id_pub, $pub_usuario = false, $es_favorito = false){
 ?>	
 
   <div class="col-md-3 mb-4 text-center d-flex align-items-stretch">
@@ -41,7 +41,7 @@ function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $precio, $id_p
 	   
         <?php
             if ( !$pub_usuario ) {
-                echo '</a>';
+                echo '</a>';  //esto no se que significa
             }
         ?>
 

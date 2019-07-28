@@ -28,7 +28,7 @@
 		
 		<div class="row">
 			
-			<div class="col-md-2 h-100 ">
+			<div class="col-md-2 h-100">
 				
 
 			</div>
@@ -37,19 +37,19 @@
 				
 				<span>
 					<p>
-					Encontra el salón que mas se adapte a tu estilo.
-				</p>
-				<p>
-					Busca por categoría o simplemente escribiendo el nombre de tu favorito.
-				</p>
+						Encontra el salón que mas se adapte a tu estilo.
+					</p>
+					<p>
+						Busca por categoría o simplemente escribiendo el nombre de tu favorito.
+					</p>
 				</span>
 
 				<div class="">
 					
 					<!--card de salon-->
-					<div class="card mb-3" style="max-width: 880px; height: 220px;">
+					<div class="card mb-3">
 					  <div class="row no-gutters m-2">
-					    <div class="col-md-4 mt-1">
+					    <div class="col-md-3 mt-1">
 					      <img src="<?=PATH_IMAGENES?>/laBarberia.png" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
 					    </div>
 					    <div class="col-md-8">
@@ -62,9 +62,9 @@
 					  </div>
 					</div>
 
-					<div class="card mb-3" style="max-width: 880px; height: 220px;">
+					<div class="card mb-3">
 					  <div class="row no-gutters m-2">
-					    <div class="col-md-4 mt-1">
+					    <div class="col-md-3 mt-2">
 					      <img src="<?=PATH_IMAGENES?>/adara.jpg" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
 					    </div>
 					    <div class="col-md-8">

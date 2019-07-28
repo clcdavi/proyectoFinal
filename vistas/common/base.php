@@ -53,9 +53,9 @@
 				<?php 
 				if ( !isset($_SESSION["usuario"]) ){ ?>
 					<div>
-						<a data-toggle="modal" data-target="#exampleModalR" class="nav-link" href=""><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Registrate</button></a>
+						<a data-toggle="modal" data-target="#exampleModalR" class="nav-link" href=""><button type="button" class="btn btn-outline-primary" id="bRegis" onclick="">Registrate</button></a>
 
-						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Ingresá</button></a>
+						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-primary" id="bIngresar" onclick="">Ingresá</button></a>
 					</div>
 				<?php 
 				}
@@ -75,6 +75,28 @@
 			</div>
 		</div>
 	</header>
+
+	<?php 
+
+		$tipo_alerta = "danger";
+
+		if ( isset($_GET["s"] ) ){
+
+			$mensaje_alerta = $_GET["s"];
+			$tipo_alerta = $_GET["t"]; //Tipo de alerta
+
+		}
+
+		if ( isset($mensaje_alerta) ){?>
+
+		<div class="alert alert-<?=$tipo_alerta?> alert-dismissible fade show text-center">
+	    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <?= $mensaje_alerta ?>
+		</div>
+
+	<?php 
+		}
+	?>
 
 	<?php
 		include( PATH_VIEWS . '/common/partials/index.php' );
@@ -199,9 +221,7 @@
     		
 			var urlBusqueda = 'index.php?buscar=' + $("#buscar").val() +
 							  '&categoria=' + $("#categoria").val() + 
-							  '&orden=' + $("#orden").val() +
-							  '&precio_desde=' + $("#precio_desde").val() + 
-							  '&precio_hasta=' + $("#precio_hasta").val();
+							  '&orden=' + $("#orden").val();
 
 			window.setTimeout( window.location = urlBusqueda, 100 );	
 
