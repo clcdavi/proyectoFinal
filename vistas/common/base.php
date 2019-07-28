@@ -23,7 +23,7 @@
 
 </head>
 <body>
-	<header class="container-fluid bg-warning"><!--contenido fluido, ocupa el ancho de la pantalla-->
+	<header class="container-fluid"><!--contenido fluido, ocupa el ancho de la pantalla-->
 		<!--fila-->
 		<div class="row">
 
@@ -53,16 +53,16 @@
 				<?php 
 				if ( !isset($_SESSION["usuario"]) ){ ?>
 					<div>
-						<a data-toggle="modal" data-target="#exampleModalR" class="nav-link" href=""><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Registrate</button></a>
+						<a data-toggle="modal" data-target="#exampleModalR" class="nav-link" href=""><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Registrate</button></a>
 
-						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-secondary" id="bRegis" onclick="">Ingresá</button></a>
+						<a data-toggle="modal" data-target="#exampleModal" class="nav-link" href="#"><button type="button" class="btn btn-outline-secondary" id="bIngresar" onclick="">Ingresá</button></a>
 					</div>
 				<?php 
 				}
 				else{
 				?>
-					<div class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"><?= $_SESSION["usuario"] ?></a>
+					<div class="nav-item dropdown d-flex">
+						<a class="nav-link dropdown-toggle ml-auto" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"><?= $_SESSION["usuario"] ?></a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item" href="#">Cuenta</a>
 							<a class="dropdown-item" href="index.php?m=logout">Salir</a>
@@ -194,7 +194,21 @@
 	 ?>
 	
 	<script>
+
+    	function enviarBusqueda(){
+    		
+			var urlBusqueda = 'index.php?buscar=' + $("#buscar").val() +
+							  '&categoria=' + $("#categoria").val() + 
+							  '&orden=' + $("#orden").val() +
+							  '&precio_desde=' + $("#precio_desde").val() + 
+							  '&precio_hasta=' + $("#precio_hasta").val();
+
+			window.setTimeout( window.location = urlBusqueda, 100 );	
+
+	    }
+
 	</script>
+
 	<script src="<?= PATH_VENDOR ?>/jquery/jquery-3.4.1.min.js"></script>
 	<script src="<?= PATH_VENDOR ?>/popper/popper.min.js"></script>
 	<script src="<?= PATH_VENDOR ?>/bootstrap/js/bootstrap.min.js"></script>

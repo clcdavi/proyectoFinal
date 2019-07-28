@@ -3,7 +3,7 @@
 function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $precio, $id_pub, $pub_usuario = false, $es_favorito = false){
 ?>	
 
-  <div class="col-md-3 mb-4 text-center d-flex align-items-stretch"">
+  <div class="col-md-3 mb-4 text-center d-flex align-items-stretch">
 
 
 	<div class="card">
@@ -126,6 +126,8 @@ function getOptionsComboCategorias($incluir_cat_todas = false, $id_item_seleccio
 
     $opcionesCombo = "";
 
+    /*si en la variable "incluir_cat_todas" no hay nada,(osea nda seleccionado), entonces va a decir "Todas"*/
+    
     if ($incluir_cat_todas){
         $opcionesCombo .= '<option value="-1">Todas</option>';
     }

@@ -1,0 +1,48 @@
+SELECT pub_id, pub_titulo, SUBSTRING(pub_descripcion, 1, 100) AS pub_descripcion, pub_precio, pub_id_categoria, pub_id_usuario, pub_id_tipo_publicacion, pub_imagen
+
+FROM publicaciones
+
+WHERE pub_id_categoria = 13 
+
+AND pub_titulo LIKE "%lenovo%"
+
+AND `pub_precio` >= 4000
+
+AND `pub_precio` <= 10000
+
+ORDER BY pub_precio DESC
+...................................................................................
+modif en:
+ combo categorias, section, footer,base, bBuscar,
+
+*accedi a la db para obtener las categorias,
+cuando selecciono una, tengo que presionar buscar.
+(
+    yo controlo el boton buscar? si. 
+    donde esta ese control? 
+)
+
+*    El usuario puede ver inicialmente cierta cantidad de salones 
+|   publicados por el administrador.
+|      Puede seleccionar una categoria, presionar buscar, y de esta
+|   manera se pintarán los salones publicados, segun la categoria seleccionada.
+|     Puede escribir el nombre o descripcion del salon que decea buscar, 
+|   presionar buscar, y de esta manera se pintarán los salones publicados, 
+|   segun el nombre o descripcion escritos.
+
+*Usuario logueado: 
+|   puede seleccionar sus salones favoritos,
+|   hacer comentarios de estos.
+|   ver comentarios de otros usuarios.
+|   *Favoritos
+      |ves los salones seleccionados.
+      |boton de agregar comentario
+      |boton de historial de comentarios
+      |
+
+*Revisando archivo de favoritos para CSF:
+|    en DB(agregue nueva tabla CSF)-->(está OK), y agregue los campos de imagen.
+|
+|   Tabla favoritos_usuarios:
+|    fav_sal_id_salones(primary)--> conecta con la id de salones
+|    fav_sal_id_usuario(primary)--> conecta con la id de usuarios

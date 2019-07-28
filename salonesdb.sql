@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2019 a las 00:45:13
+-- Tiempo de generación: 28-07-2019 a las 06:29:42
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -36,6 +36,17 @@ CREATE TABLE `comentarios` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `favoritos_usuarios`
+--
+
+CREATE TABLE `favoritos_usuarios` (
+  `fav_sal_id_salones` int(11) NOT NULL,
+  `fav_sal_id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `salones`
 --
 
@@ -54,30 +65,30 @@ CREATE TABLE `salones` (
 --
 
 INSERT INTO `salones` (`sal_id`, `sal_nombre`, `sal_direccion`, `sal_telefono`, `sal_cat`, `sal_imagen`, `sal_id_usuario`) VALUES
-(1, 'Hoy la Rompo', 'Suipacha 618', 51210633, 2, '', 0),
-(2, 'Staff D&D', 'Juan Sanchez 2086', 47461987, 2, '', 0),
-(3, 'Urbana', 'Av. Nicolas Avellaneda 4402', 1135815251, 2, '', 0),
-(4, 'Calaveras', 'Av. Nicolas Avellaneda 2102', 60275593, 2, '', 0),
-(5, 'Real Boyz', 'Cnel. Brandsen 1119', 69693722, 2, '', 0),
-(6, 'Tendencia', 'Gral. Lavalle 1074', 54092315, 2, '', 0),
-(7, 'Master Flow Barber Shop', 'Constitucion 1409', 1550025353, 2, '', 0),
-(8, 'Style Barber Shop', 'Av. Pres. Peron 815', 22663370, 2, '', 0),
-(9, 'Franca', 'Av. Pres. Peron 770', 47467063, 2, '', 0),
-(10, 'La Barberia', '3 de febrero 615', 25024145, 2, '', 0),
-(11, 'Chau Planchita', 'General Pinto 2960', 62016965, 1, '', 0),
-(12, 'Sueña', 'Cnel. Brandsen 1119', 58316303, 1, '', 0),
-(13, 'Bony', 'Av. Nicolas Avellaneda 3744', 47146059, 1, '', 0),
-(14, 'Urbanas', 'Av. Nicolas Avellaneda 3080', 47445834, 1, '', 0),
-(15, 'unisex Sofi', 'Av. Nicolas Avellaneda 3288', 1536661321, 1, '', 0),
-(16, 'Magic Estilismo', 'Av. Nicolas Avellaneda 3052', 47254689, 1, '', 0),
-(17, 'Greys', 'Av. Nicolas Avellaneda 2224', 23708678, 1, '', 0),
-(18, 'Brisa de Mar', 'Av. Sobremonte 2070', 1138092299, 1, '', 0),
-(19, 'Karina Darc', 'Constitucion 1175', 47441680, 1, '', 0),
-(20, 'Lore Unisex', 'Juan B. Justo 2824', 21886172, 1, '', 0),
-(21, 'Adara', '25 de mayo 3068', 1139156007, 3, '', 0),
-(22, 'Luli Gugli Nails Art', 'Ayacucho 1029', 1564402503, 3, '', 0),
-(23, 'Frida Atenea uñas', 'Quirno Costa 1326', 1541776631, 3, '', 0),
-(24, 'ACP', 'Ituzaingo 1193', 45491465, 3, '', 0);
+(1, 'Hoy la Rompo', 'Suipacha 618', 51210633, 2, 'hoyLaRompo.jpg', 0),
+(2, 'Staff D&D', 'Juan Sanchez 2086', 47461987, 2, 'staffD&D.jpg', 0),
+(3, 'Urbana', 'Av. Nicolas Avellaneda 4402', 1135815251, 2, 'urbana.jpg', 0),
+(4, 'Calaveras', 'Av. Nicolas Avellaneda 2102', 60275593, 2, 'calaveras.jpg', 0),
+(5, 'Real Boyz', 'Cnel. Brandsen 1119', 69693722, 2, 'realBoys.jpg', 0),
+(6, 'Tendencia', 'Gral. Lavalle 1074', 54092315, 2, 'tendencia.jpg', 0),
+(7, 'Master Flow Barber Shop', 'Constitucion 1409', 1550025353, 2, 'masterFlow.jpg', 0),
+(8, 'Style Barber Shop', 'Av. Pres. Peron 815', 22663370, 2, 'styleBarberShop.jpg', 0),
+(9, 'Franca', 'Av. Pres. Peron 770', 47467063, 2, 'franca.jpg', 0),
+(10, 'La Barberia', '3 de febrero 615', 25024145, 2, 'laBarberia.png', 0),
+(11, 'Chau Planchita', 'General Pinto 2960', 62016965, 1, 'chauPlanchita.jpg', 0),
+(12, 'Sueña', 'Cnel. Brandsen 1119', 58316303, 1, 'sueña.jpg', 0),
+(13, 'Bony', 'Av. Nicolas Avellaneda 3744', 47146059, 1, 'bony.jpg', 0),
+(14, 'Urbanas', 'Av. Nicolas Avellaneda 3080', 47445834, 1, 'urbanas.jpg', 0),
+(15, 'unisex Sofi', 'Av. Nicolas Avellaneda 3288', 1536661321, 1, 'unisexSofi.jpg', 0),
+(16, 'Magic Estilismo', 'Av. Nicolas Avellaneda 3052', 47254689, 1, 'magicEstilismo.jpg', 0),
+(17, 'Greys', 'Av. Nicolas Avellaneda 2224', 23708678, 1, 'greys.jpg', 0),
+(18, 'Brisa de Mar', 'Av. Sobremonte 2070', 1138092299, 1, 'brisaDeMar.jpg', 0),
+(19, 'Karina Darc', 'Constitucion 1175', 47441680, 1, 'karinaDarc.jpg', 0),
+(20, 'Lore Unisex', 'Juan B. Justo 2824', 21886172, 1, 'loreUnisex.jpg', 0),
+(21, 'Adara', '25 de mayo 3068', 1139156007, 3, 'adara.jpg', 0),
+(22, 'Luli Gugli Nails Art', 'Ayacucho 1029', 1564402503, 3, 'luliGugli.jpg', 0),
+(23, 'Frida Atenea uñas', 'Quirno Costa 1326', 1541776631, 3, 'fridaAtenea.jpg', 0),
+(24, 'ACP', 'Ituzaingo 1193', 45491465, 3, 'acp.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -147,6 +158,13 @@ ALTER TABLE `comentarios`
   ADD KEY `id_usuarios` (`id_usuarios`);
 
 --
+-- Indices de la tabla `favoritos_usuarios`
+--
+ALTER TABLE `favoritos_usuarios`
+  ADD PRIMARY KEY (`fav_sal_id_salones`,`fav_sal_id_usuario`),
+  ADD KEY `fav_sal_id_usuario` (`fav_sal_id_usuario`);
+
+--
 -- Indices de la tabla `salones`
 --
 ALTER TABLE `salones`
@@ -211,6 +229,13 @@ ALTER TABLE `sal_usuarios`
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_salones`) REFERENCES `salones` (`sal_id_usuario`),
   ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_usuarios`) REFERENCES `sal_usuarios` (`user_id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `favoritos_usuarios`
+--
+ALTER TABLE `favoritos_usuarios`
+  ADD CONSTRAINT `favoritos_usuarios_ibfk_1` FOREIGN KEY (`fav_sal_id_salones`) REFERENCES `salones` (`sal_id`),
+  ADD CONSTRAINT `favoritos_usuarios_ibfk_2` FOREIGN KEY (`fav_sal_id_usuario`) REFERENCES `sal_usuarios` (`user_id`);
 
 --
 -- Filtros para la tabla `salones`

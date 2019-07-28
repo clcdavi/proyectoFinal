@@ -19,8 +19,8 @@
 
         $conexion = getConexion();
 
-        $sql = "INSERT INTO categorias " . 
-                    "(cat_descripcion)" 
+        $sql = "INSERT INTO sal_categoria " . 
+                    "(sal_cat_descripcion)" 
                         . " VALUES ('" 
                         . $categoria["descripcion"]
                      . "')";
@@ -33,9 +33,9 @@
 
         $conexion = getConexion();
 
-        $sql = "UPDATE categorias " . 
-                "SET cat_descripcion = '" . $categoria["descripcion"] .
-                "' WHERE cat_id = " . $categoria["id"]; 
+        $sql = "UPDATE sal_categoria " . 
+                "SET sal_cat_descripcion = '" . $categoria["descripcion"] .
+                "' WHERE sal_cat_id = " . $categoria["id"]; 
                        
         $conexion->query( $sql );
 
@@ -46,8 +46,8 @@
 
         $conexion = getConexion();
 
-        $sql = "DELETE FROM categorias " . 
-                " WHERE cat_id = " . $categoria["id"]; 
+        $sql = "DELETE FROM sal_categoria " . 
+                " WHERE sal_cat_id = " . $categoria["id"]; 
                        
         $conexion->query( $sql );
 
