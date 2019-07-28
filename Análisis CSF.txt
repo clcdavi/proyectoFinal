@@ -12,10 +12,8 @@ AND `pub_precio` <= 10000
 
 ORDER BY pub_precio DESC
 ...................................................................................
-modif en:
-	header,msj alerta, en DB(nueva tabla sal_descripcion), 
-	publicacionesDAO,favoritosDAO,categoriasDAO,
-	helper.php, footer, section,
+modif en: section(listado de publicaciones), 
+	
 
 *accedi a la db para obtener las categorias,
 cuando selecciono una, tengo que presionar buscar.
@@ -28,19 +26,22 @@ cuando selecciono una, tengo que presionar buscar.
 |   publicados por el administrador.
 |      Puede seleccionar una categoria, presionar buscar, y de esta
 |   manera se pintarán los salones publicados, segun la categoria seleccionada.
-|     Puede escribir el nombre o descripcion del salon que decea buscar, 
+|     Puede escribir el nombre o descripcion del salon que desea buscar, 
 |   presionar buscar, y de esta manera se pintarán los salones publicados, 
 |   segun el nombre o descripcion escritos.
 
 *Usuario logueado: 
-|   puede seleccionar sus salones favoritos,
-|   hacer comentarios de estos.
-|   ver comentarios de otros usuarios.
-|   *Favoritos
-      |ves los salones seleccionados.
-      |boton de agregar comentario
-      |boton de historial de comentarios
-      |
+|||*Comentarios
+|    |puede seleccionar sus salones favoritos,
+|    |hacer comentarios de estos.
+|    |ver comentarios de otros usuarios.
+|||*Favoritos
+|    |ves los salones seleccionados.
+|    |boton de agregar comentario
+|    |boton de historial de comentarios
+|||*Publicar
+|    |puede publicar su salon
+|    |actualizar, editar, eliminar la publicacion
 
 *Revisando archivo de favoritos para CSF:
 |    en DB(agregue nueva tabla CSF)-->(está OK), y agregue los campos de imagen.

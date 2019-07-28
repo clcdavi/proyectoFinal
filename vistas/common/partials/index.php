@@ -44,9 +44,12 @@
 					</p>
 				</span>
 
-				<div class="">
-					
-					<!--card de salon-->
+				<div>
+					<!-- listado de publicaciones -->
+
+					<?php if(isset($contenido_listado)){include( $contenido_listado );} ?>
+
+					<!--card de salon (de ejemplo)-->
 					<div class="card mb-3">
 					  <div class="row no-gutters m-2">
 					    <div class="col-md-3 mt-1">

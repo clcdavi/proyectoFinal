@@ -48,12 +48,9 @@ function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $id_pub, $pub_
 	    <div class="card-img-top card-body">
 
 		  </div>
-	      
-
-
 
 	      <div class="card-footer">
-	    	  <?php echo $precio ;  
+	    	  <?php echo $precio ;  //no tengo precio
 
               if ( $pub_usuario ) {
               ?>

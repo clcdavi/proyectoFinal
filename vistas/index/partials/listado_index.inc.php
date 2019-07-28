@@ -18,36 +18,12 @@
     	$id_categoria = $_GET["categoria"];
     }
 
-    $orden = "pub_precio ASC";
-
-    if ( isset($_GET["orden"]) ){
-    	if ( $_GET["orden"] == 1){
-    		$orden = "pub_precio DESC";
-    	};
-    }
-
-    $precio_desde = null;
-    if ( isset($_GET["precio_desde"]) ){
-    	$precio_desde = $_GET["precio_desde"];
-    }
-
-    $precio_hasta = null;
-    if ( isset($_GET["precio_hasta"]) ){
-    	$precio_hasta = $_GET["precio_hasta"];
-
-    	if (!$precio_desde){
-    		$precio_desde = 0;
-    	}
-
-    }
-
-
     if ( isset( $_GET["only_favs"]) )
 	{
 		$pubs = buscarPublicacionesFavoritasUsuario( $_SESSION["id_usuario"] );
 	}
 	else{
-		$pubs = buscarPublicaciones( $busqueda, $id_categoria, $orden, $precio_desde, $precio_hasta );	
+		$pubs = buscarPublicaciones( $busqueda, $id_categoria);	
 	}
     
 
@@ -62,6 +38,6 @@
 
 			$es_favorito = in_array( $pub['pub_id'], $favoritos);
 
-			crearHTMLCardPublicacion($pub['pub_titulo'], $pub['pub_descripcion'] . "...", $pub['pub_imagen'], "$" . $pub['pub_precio'], $pub['pub_id'], false, $es_favorito);			   			
+			crearHTMLCardPublicacion($pub['pub_titulo'], $pub['pub_descripcion'] . "...", $pub['pub_imagen'], "$" . $pub['pub_id'], false, $es_favorito);			   			
 		}
     }	
