@@ -12,13 +12,9 @@ if ( isset($_REQUEST["a"]) ){
 
       $publicacion["descripcion"] = $_POST["descripcion"];
 
-      $publicacion["precio"] = $_POST["precio"];
-
       $publicacion["id_categoria"] = $_POST["categoria"];
 
       $publicacion["id_usuario"] = $_SESSION["id_usuario"];
-
-      $publicacion["id_tipo_publicacion"] = $_POST["tipo_publicacion"];
 
       subirImagenYGuardar($publicacion);
 
@@ -57,13 +53,9 @@ if ( isset($_REQUEST["a"]) ){
 
       $publicacion["descripcion"] = $_POST["descripcion"];
 
-      $publicacion["precio"] = $_POST["precio"];
-
       $publicacion["id_categoria"] = $_POST["categoria"];
 
       $publicacion["id_usuario"] = $_SESSION["id_usuario"];
-
-      $publicacion["id_tipo_publicacion"] = $_POST["tipo_publicacion"];
 
       $publicacion["imagen"] = null;
 

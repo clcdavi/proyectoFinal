@@ -3,77 +3,26 @@
 function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $id_pub, $pub_usuario = false, $es_favorito = false){
 ?>	
 
-  <div class="col-md-3 mb-4 text-center d-flex align-items-stretch">
-
-
-	<div class="card">
-
-        <?php
-            if ( !$pub_usuario ) {
-
-                if ( $es_favorito ){
-                    $link = '<a class="nav-link p-0 m-2 text-right" href="index.php?m=fav';
-
-                    if ( isset($_GET["only_favs"]) ){
-                       $link .= "&only_favs";
-                    }
-
-                    
-                    $link .= "&a=del&id=" . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/favorito.png' . '"></a>';
-
-                    echo $link;
-                }
-                else{
-                    echo '<a class="nav-link p-0 m-2 text-right" href="index.php?m=fav&a=add&id=' . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/no_favorito.png' . '"></a>';
-                }
-                
-                echo '<a class="nav-link" href="index.php?m=show_pub&id=' . $id_pub .'">';
-
-            }
-        ?>
-
-		  <div class="card-title mb-5 p-4">
-          
-		  <?= $titulo ?>
-	  	</div>
-
-	    <img class="card-img-top"  alt=""  src="<?= FILES . '/imagenes/publicaciones/' . $imagen ?>">
-	   
-        <?php
-            if ( !$pub_usuario ) {
-                echo '</a>';  //esto no se que significa
-            }
-        ?>
-
-	    <div class="card-img-top card-body">
-
-		  </div>
-
-	      <div class="card-footer">
-	    	  <?php echo $precio ;  //no tengo precio
-
-              if ( $pub_usuario ) {
-              ?>
-              <div class="row py-2 mt-2 bg-light">
-            
-                <div class="col-12 ">
-                    <a class="btn px-4 btn-success" href="index.php?m=pubs&a=edit&id=<?=$id_pub?>" >Editar</a>
-                    <a class="btn px-4 btn-danger" href="index.php?m=pubs&a=del&id=<?=$id_pub?>" >Eliminar</a>
+<!--card de salon (de ejemplo)-->
+          <div class="card mb-3">
+            <div class="row no-gutters m-2">
+              <div class="col-md-3 mt-1">
+                <img src="<?=FILES?>/imagenes/publicaciones/<?=$imagen?>" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><?=$titulo?></h5>
+                  <p class="card-text"><?=$descripcion?></p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-
-              </div>              
-        
-         <?php } ?>
-
-        </div>
+              </div>
+            </div>
+          </div>
 
 
 
-	</div>
 
-
-
-  </div>
+  
 
 
 <?php 

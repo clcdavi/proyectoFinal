@@ -31,7 +31,7 @@
 			<div class="col-4">
 
 				<div>
-					<a href=""><img id="logoPequeño" src="<?=PATH_IMAGENES?>/logoCSF.png" alt="logoPequeño"></a>
+					<a href="index.php?m=index"><img id="logoPequeño" src="<?=PATH_IMAGENES?>/logoCSF.png" alt="logoPequeño"></a>
 				</div>
 
 				<div>

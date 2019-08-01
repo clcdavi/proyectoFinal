@@ -46,39 +46,12 @@
 
 				<div>
 					<!-- listado de publicaciones -->
-
 					<?php if(isset($contenido_listado)){include( $contenido_listado );} ?>
+					
 
-					<!--card de salon (de ejemplo)-->
-					<div class="card mb-3">
-					  <div class="row no-gutters m-2">
-					    <div class="col-md-3 mt-1">
-					      <img src="<?=PATH_IMAGENES?>/laBarberia.png" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
-					    </div>
-					    <div class="col-md-8">
-					      <div class="card-body">
-					        <h5 class="card-title">Nombre del Salon</h5>
-					        <p class="card-text">Descripcion y datos del salon. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, perferendis, exercitationem accusamus non.</p>
-					        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					      </div>
-					    </div>
-					  </div>
-					</div>
+					
 
-					<div class="card mb-3">
-					  <div class="row no-gutters m-2">
-					    <div class="col-md-3 mt-2">
-					      <img src="<?=PATH_IMAGENES?>/adara.jpg" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
-					    </div>
-					    <div class="col-md-8">
-					      <div class="card-body">
-					        <h5 class="card-title">Nombre del Salon</h5>
-					        <p class="card-text">Descripcion y datos del salon. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, perferendis, exercitationem accusamus non.</p>
-					        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-					      </div>
-					    </div>
-					  </div>
-					</div>
+					
 
 
 				</div>
@@ -90,7 +63,7 @@
 				<?php 
 				if ( isset($_SESSION["usuario"]) ){ ?>
 
-					<div class="d-flex flex-column">
+					<div class="d-flex flex-column mt-5">
 
 						<div class="mt-4 mb-2">					    
 			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
@@ -105,7 +78,7 @@
 						</div>
 
 						<div  class="mt-4 mb-2">
-							<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis publicaciones</a>
+							<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis salones</a>
 						</div>
 
 					</div>

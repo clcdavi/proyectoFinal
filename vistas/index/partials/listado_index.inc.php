@@ -24,6 +24,7 @@
 	}
 	else{
 		$pubs = buscarPublicaciones( $busqueda, $id_categoria);	
+
 	}
     
 
@@ -36,8 +37,10 @@
 	if ($pubs){
 		foreach ($pubs as $pub) {
 
-			$es_favorito = in_array( $pub['pub_id'], $favoritos);
+			$es_favorito = in_array( $pub['sal_id'], $favoritos);
 
-			crearHTMLCardPublicacion($pub['pub_titulo'], $pub['pub_descripcion'] . "...", $pub['pub_imagen'], "$" . $pub['pub_id'], false, $es_favorito);			   			
+			crearHTMLCardPublicacion($pub['sal_nombre'], $pub['sal_descripcion'] . "...", $pub['sal_imagen'], "$" . $pub['sal_id'], false, $es_favorito);
+
+ 			
 		}
     }	

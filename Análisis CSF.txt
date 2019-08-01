@@ -12,8 +12,7 @@ AND `pub_precio` <= 10000
 
 ORDER BY pub_precio DESC
 ...................................................................................
-modif en: section(listado de publicaciones), 
-	
+modif en: section(listado de publicaciones), ruta de imagenes	
 
 *accedi a la db para obtener las categorias,
 cuando selecciono una, tengo que presionar buscar.
