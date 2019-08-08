@@ -29,7 +29,8 @@ header{
 
 #logoPequeño{
 	position: absolute;
-	width: 130px;
+	width: 100px;
+	top: 2px;
 	left: 0;
 }
 
@@ -55,7 +56,13 @@ header{
 section{
 	position: relative;
 	width: 1334px;
+	height: 100%;
 	background: #ebebeb;
+}
+
+.icon{
+  width: 8px;
+  height: 8px;
 }
 
 .salBox {
@@ -83,6 +90,6 @@ footer{
 	position: relative;
 	width: 1319px;
 	height: 70px;
-	bottom: 0;
+	bottom: 0px;
 }
 

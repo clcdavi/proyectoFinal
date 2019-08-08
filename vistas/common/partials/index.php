@@ -27,38 +27,112 @@
 	</form>
 		
 		<div class="row">
-			
-			<div class="col-md-2 h-100">
-				
+			<!-- side left -->
+			<div class="col-md-2">
 
+			<?php 
+				if ( !isset($_SESSION["usuario"]) ){ ?>
+
+					<div class="d-flex flex-column mt-5">
+
+						<div class="mt-4 mb-2">					    
+			   				<a href="index.php?only_favs" class="mx-4" name="favoritos">Favoritos</a>
+			   			</div>
+
+			   			<div  class="mt-4 mb-2">
+							<a href="#" class="mx-4" name="favoritos">Comentarios</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=new" class="mx-4" name="publicar">Publicar</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis salones</a>
+						</div>
+
+					</div>
+
+			<?php } ?>
+				
+			<?php 
+				if ( isset($_SESSION["usuario"]) ){ ?>
+
+					<div class="d-flex flex-column mt-5">
+
+						<div class="mt-4 mb-2">					    
+			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+			   			</div>
+
+			   			<div  class="mt-4 mb-2">
+							<a href="#" class="mx-4" name="favoritos">Comentarios</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=new" class="mx-4" name="publicar">Publicar</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis salones</a>
+						</div>
+
+					</div>
+
+			<?php } ?>
+				
 			</div>
 
-			<div class="col-lg-8 p-2 salBox">
+			<!--centro-->
+			<div class="col-md-8">
 				
 				<span>
-					<p>
-						Encontra el salón que mas se adapte a tu estilo.
-					</p>
-					<p>
-						Busca por categoría o simplemente escribiendo el nombre de tu favorito.
-					</p>
+	                	<p>
+							Encontra el salón que mas se adapte a tu estilo.
+						</p>
+						<p>
+							Busca por categoría o simplemente escribiendo el nombre de tu favorito.
+						</p>
+					
+
+					
 				</span>
 
 				<div>
+
 					<!-- listado de publicaciones -->
 					<?php if(isset($contenido_listado)){include( $contenido_listado );} ?>
-					
-
-					
-
-					
-
+				
 
 				</div>
 
 			</div>
 
 			<div class="col-md-2">
+				<!-- side right -->
+				<?php 
+				if ( !isset($_SESSION["usuario"]) ){ ?>
+
+					<div class="d-flex flex-column mt-5">
+
+						<div class="mt-4 mb-2">					    
+			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+			   			</div>
+
+			   			<div  class="mt-4 mb-2">
+							<a href="#" class="mx-4" name="favoritos">Comentarios</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=new" class="mx-4" name="publicar">Publicar</a>
+						</div>
+
+						<div  class="mt-4 mb-2">
+							<a href="index.php?m=pubs&a=list" class="mx-4" name="publicar">Mis salones</a>
+						</div>
+
+					</div>
+
+				<?php } ?>
 				
 				<?php 
 				if ( isset($_SESSION["usuario"]) ){ ?>
@@ -70,7 +144,7 @@
 			   			</div>
 
 			   			<div  class="mt-4 mb-2">
-							<a href="#" class="mx-4" name="favoritos">Historial</a>
+							<a href="#" class="mx-4" name="favoritos">Comentarios</a>
 						</div>
 
 						<div  class="mt-4 mb-2">

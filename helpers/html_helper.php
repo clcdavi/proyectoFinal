@@ -3,28 +3,76 @@
 function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $id_pub, $pub_usuario = false, $es_favorito = false){
 ?>	
 
-<!--card de salon (de ejemplo)-->
-          <div class="card mb-3">
-            <div class="row no-gutters m-2">
-              <div class="col-md-3 mt-1">
-                <img src="<?=FILES?>/imagenes/publicaciones/<?=$imagen?>" class="card-img img-thumbnail "style="max-width: 200px;" alt="laBarberia">
+        <!--card de salon (de ejemplo)-->
+          <div class="card mb-2">
+                  <?php
+                    if ( !$pub_usuario ) {
+
+                        if ( $es_favorito ){
+                            $link = '<a class="nav-link text-right" href="index.php?m=fav';
+
+                            if ( isset($_GET["only_favs"]) ){
+                               $link .= "&only_favs";
+                            }
+
+                            
+                            $link .= "&a=del&id=" . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/favorito.png' . '"></a>';
+
+                            echo $link;
+                        }
+                        else{
+                            echo '<a class="nav-link text-right" href="index.php?m=fav&a=add&id=' . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/no_favorito.png' . '"></a>';
+                        }
+                        
+                        echo '<a class="nav-link" href="index.php?m=show_pub&id=' . $id_pub .'">';
+
+                      }
+                  ?>
+            <div class="row m-2">
+              <div class="col-md-4 mt-1">
+                <img src="<?=FILES?>/imagenes/publicaciones/<?=$imagen?>" class="card-img img-thumbnail bg-danger "style="max-width: 200px;" alt="imagenSalon">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
+
                   <h5 class="card-title"><?=$titulo?></h5>
                   <p class="card-text"><?=$descripcion?></p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
               </div>
             </div>
+            <div class="card-footer p-0">
+              <?php
+
+                if ( $pub_usuario ) {
+                ?>
+                  <div class="row bg-light mx-1 justify-content-between">
+                
+                    <div class="col-4 my-1">
+                        <a class="btn px-3 btn-success" href="index.php?m=pubs&a=edit&id=<?=$id_pub?>" >Editar</a>
+                        <a class="btn px-3 btn-danger" href="index.php?m=pubs&a=del&id=<?=$id_pub?>" >Eliminar</a>
+                    </div>
+
+                    <div class="col-4 mt-1 d-flex justify-content-end">
+                      <img src="recursos/images/logoCSF.ico" alt="icono" style="width: 38px; height:38px; margin:0px;">
+                    </div>
+
+                  </div>              
+            
+              <?php } ?>
+              <?php 
+
+                if (!($pub_usuario)) {
+                ?>
+
+                  <div class="d-flex border-bottom justify-content-end">
+                    <img src="recursos/images/logoCSF.ico" alt="icono" style="width: 25px; height:25px; margin:0px;">
+                  </div>
+
+              <?php } ?>
+
+            </div>
+          
           </div>
-
-
-
-
-  
-
-
 <?php 
 
 }

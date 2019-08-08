@@ -97,7 +97,7 @@
 	<?php 
 		}
 	?>
-
+	
 	<?php
 		include( PATH_VIEWS . '/common/partials/index.php' );
 	?>
@@ -228,6 +228,7 @@
 	    }
 
 	</script>
+	
 
 	<script src="<?= PATH_VENDOR ?>/jquery/jquery-3.4.1.min.js"></script>
 	<script src="<?= PATH_VENDOR ?>/popper/popper.min.js"></script>

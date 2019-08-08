@@ -117,7 +117,7 @@
         $sql = "UPDATE salones SET " . 
                     "sal_nombre= \"" . $publicacion["nombre"] . "\"" .
                     ", sal_descripcion=\"" . $publicacion["descripcion"] . "\"".
-                    ", sal_categoria=" . $publicacion["id_categoria"] .
+                    ", sal_cat=" . $publicacion["id_categoria"] .
                     ", sal_usuario=" . $publicacion["id_usuario"] ;
 
         if ( $publicacion["imagen"] ){

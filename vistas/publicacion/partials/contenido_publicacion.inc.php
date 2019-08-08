@@ -11,19 +11,17 @@ $publicacion = mysqli_fetch_assoc($registros);
 <div class="container-fluid">
     <div class="row px-5 mx-5">
         <div class="col-md-6 ">
-            <img class="ml-5 img-fluid w-75 border border-warning" alt="" src="<?=FILES . "/imagenes/publicaciones/" . $publicacion["pub_imagen"]?>" />
+            <img class="ml-5 img-fluid w-75 border border-warning" alt="" src="<?=FILES . "/imagenes/publicaciones/" . $publicacion["sal_imagen"]?>" />
             
             <p class="ml-5 img-fluid w-75 pt-5">
-                <?=$publicacion["pub_descripcion"]?>
+                <?=$publicacion["sal_descripcion"]?>
+                hola
             </p>
         </div>
         <div class="col-md-6 ">
             <h2>
-                <?=$publicacion["pub_titulo"]?>
+                <?=$publicacion["sal_nombre"]?>
             </h2>
-            <p class="display-4">
-                <?="$ " . $publicacion["pub_precio"]?>
-            </p>
 
             <button type="button" class="btn btn-primary">
                 Comprar
