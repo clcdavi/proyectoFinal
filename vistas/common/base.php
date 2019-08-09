@@ -15,7 +15,7 @@
     
     <link href="<?= PATH_CSS ?>/styles.css" rel="stylesheet">
 
-	<!-- favIcon para el titulo -->
+	<!-- favIcon -->
 	<link href="<?=PATH_IMAGENES?>/logoCSF_2.ico" rel="icon">
 
 	<!-- fuente -->
@@ -165,18 +165,18 @@
 				<div class="col-md-8">
 					<form action="index.php" role="form" method="POST">
 
-						<input type="hidden" name="m" value="login">
+						<input type="hidden" name="m" value="sign_up">
 
 						<div class="form-group">
 							 
 							<label for="user_name">Nombre de usuario</label>
 
-							<input type="text" class="form-control" name="user_name" id="user_name" />
+							<input type="text" class="form-control" name="user_name" />
 						</div>
 
 						<div class="form-group">
 							 
-							<label for="user_name">Email</label>
+							<label for="user_email">Email</label>
 
 							<input type="email" class="form-control" name="user_email" id="user_email" />
 						</div>
@@ -185,15 +185,15 @@
 							 
 							<label for="password">Contraseña</label>
 
-							<input type="password" class="form-control" name="password" id="password" />
+							<input type="password" class="form-control" name="password" />
 						</div>
 
-						<div class="form-group">
+						<!-- <div class="form-group">
 							 
 							<label for="password">Confirmar contraseña</label>
 
 							<input type="password" class="form-control" name="password" id="password" />
-						</div>
+						</div> -->
 
 						<button type="submit" class="btn btn-primary">
 							Enviar

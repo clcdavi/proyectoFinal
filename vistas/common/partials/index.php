@@ -61,7 +61,7 @@
 					<div class="d-flex flex-column mt-5">
 
 						<div class="mt-4 mb-2">					    
-			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+			   				<a href="index.php?only_favs" class="mx-4" name="favoritos">Favoritos</a>
 			   			</div>
 
 			   			<div  class="mt-4 mb-2">
@@ -106,16 +106,16 @@
 				</div>
 
 			</div>
-
+			<!-- side right -->
 			<div class="col-md-2">
-				<!-- side right -->
+				
 				<?php 
 				if ( !isset($_SESSION["usuario"]) ){ ?>
 
 					<div class="d-flex flex-column mt-5">
 
 						<div class="mt-4 mb-2">					    
-			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+			   				<a href="" class="mx-4" name="favoritos">Favoritos</a>
 			   			</div>
 
 			   			<div  class="mt-4 mb-2">
@@ -140,7 +140,7 @@
 					<div class="d-flex flex-column mt-5">
 
 						<div class="mt-4 mb-2">					    
-			   				<a href="#" class="mx-4" name="favoritos">Favoritos</a>
+			   				<a href="index.php?only_favs" class="mx-4" name="favoritos">Favoritos</a>
 			   			</div>
 
 			   			<div  class="mt-4 mb-2">
