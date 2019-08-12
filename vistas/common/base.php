@@ -20,10 +20,12 @@
 
 	<!-- fuente -->
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
 </head>
 <body>
-	<header class="container-fluid"><!--contenido fluido, ocupa el ancho de la pantalla-->
+	<div class="container-fluid p-0">
+	<header><!--contenido fluido, ocupa el ancho de la pantalla-->
 		<!--fila-->
 		<div class="row">
 
@@ -41,9 +43,15 @@
 			</div>
 
 			
-			<div class="col-4">
+			<div class="col-4 d-flex align-items-center justify-content-center p-0">
 				
-				<!-- un lugarcito-->
+				<div>
+
+				    <p id="medio">
+						Encontra el salón que mas se adapte a tu estilo.
+					</p>
+
+				</div>
 						
 			</div>
 
@@ -209,12 +217,12 @@
 	  </div>
 	</div>
 </div> 
-
+</div>
 <!-- footer -->
 	<?php 
 		include( PATH_VIEWS . '/common/partials/footer.php' );
 	 ?>
-	
+		
 	<script>
 
     	function enviarBusqueda(){

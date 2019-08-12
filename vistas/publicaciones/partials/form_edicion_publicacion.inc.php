@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center flex-nowrap">
     <div class="col-md-8">
 
         <?php if ( isset($mensaje_form) ){?>

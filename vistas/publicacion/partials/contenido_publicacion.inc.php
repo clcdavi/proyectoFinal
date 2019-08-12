@@ -10,10 +10,10 @@ $publicacion = mysqli_fetch_assoc($registros);
 
 <div class="container">
     <div class="row">
-        <div class="card mb-2">
-            <img class="ml-2 img-fluid w-75 border border-warning" alt="" src="<?=FILES . "/imagenes/publicaciones/" . $publicacion["sal_imagen"]?>" />
+        <div class="card">
+            <img class="img-fluid border border-warning" alt="" src="<?=FILES . "/imagenes/publicaciones/" . $publicacion["sal_imagen"]?>" />
             
-            <p class="ml-5 img-fluid w-75 pt-5">
+            <p class="img-fluid">
                 <?=$publicacion["sal_descripcion"]?>
                 
             </p>

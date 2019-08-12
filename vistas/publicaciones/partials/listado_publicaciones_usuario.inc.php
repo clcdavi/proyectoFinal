@@ -11,6 +11,8 @@
 
 			    include_once PATH_DAOS . '/publicacionesDAO.php';
 
+			    if ( isset($_SESSION["usuario"]) ){
+
 			    $pubs = buscarPublicacionesUsuario( $_SESSION["id_usuario"] );
 
 				if ($pubs){
@@ -18,11 +20,10 @@
 					crearHTMLCardPublicacion($pub['sal_nombre'], $pub['sal_descripcion'] . "...", $pub['sal_imagen'], $pub['sal_id'], true);			   			
 					}
 			    }	
-
-			?>
+			
+			}?>
 
 		</div>
-
 	</div>
 </div>
 

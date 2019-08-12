@@ -4,35 +4,13 @@ function crearHTMLCardPublicacion($titulo, $descripcion, $imagen, $id_pub, $pub_
 ?>	
 
         <!--card de salon (de ejemplo)-->
-          <div class="card mb-2">
-                  <?php
-                    if ( !$pub_usuario ) {
-
-                        if ( $es_favorito ){
-                            $link = '<a class="nav-link text-right" href="index.php?m=fav';
-
-                            if ( isset($_GET["only_favs"]) ){
-                               $link .= "&only_favs";
-                            }
-
-                            
-                            $link .= "&a=del&id=" . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/favorito.png' . '"></a>';
-
-                            echo $link;
-                        }
-                        else{
-                            echo '<a class="nav-link text-right" href="index.php?m=fav&a=add&id=' . $id_pub .'">' . '<img src="' . PATH_IMAGENES . '/no_favorito.png' . '"></a>';
-                        }
-                        
-                        echo '<a class="nav-link" href="index.php?m=show_pub&id=' . $id_pub .'">';
-
-                      }
-                  ?>
-            <div class="row m-2">
-              <div class="col-md-4 mt-1">
-                <img src="<?=FILES?>/imagenes/publicaciones/<?=$imagen?>" class="card-img img-thumbnail bg-danger "style="max-width: 200px;" alt="imagenSalon">
+          <div class="card mb-3">
+                 
+            <div class="row m-0">
+              <div class="col-md-4 d-flex justify-content-center">
+                <img src="<?=FILES?>/imagenes/publicaciones/<?=$imagen?>" class="card-img img-thumbnail bg-warning "style="max-width: 15rem;" alt="imagenSalon">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-7">
                 <div class="card-body">
 
                   <h5 class="card-title"><?=$titulo?></h5>

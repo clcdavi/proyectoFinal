@@ -68,7 +68,7 @@
 
         $conexion = getConexion();
 
-        $consulta = "SELECT sal_id, sal_nombre, SUBSTRING(sal_descripcion, 1, 100) AS sal_descripcion, sal_categoria, sal_usuario, sal_imagen " . 
+        $consulta = "SELECT sal_id, sal_nombre, SUBSTRING(sal_descripcion, 1, 100) AS sal_descripcion, sal_cat, sal_id_usuario, sal_imagen " . 
                   "FROM salones " . 
                   "WHERE sal_id IN ( SELECT  fav_sal_id_salones  FROM favoritos_usuarios WHERE fav_sal_id_usuario = " . $id_usuario . ")";
 
